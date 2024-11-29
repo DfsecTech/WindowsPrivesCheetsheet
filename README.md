@@ -189,3 +189,10 @@ ip route add 172.16.193.0/24 dev ligolo
 listener_add --addr 0.0.0.0:4444 --to 0.0.0.0:4444 --tcp
 ```
 
+
+'''
+python-bloodhound --dns-tcp -ns 192.168.236.122 -d hutch.offsec -u 'USERNAME' -p 'PASSWORD' -c all --zip
+'''
+
+
+
